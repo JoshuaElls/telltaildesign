@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32"  href="assets/images/favicons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16"  href="assets/images/favicons/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180"     href="assets/images/favicons/favicon-180.png">
-  <meta name="msapplication-TileColor"  content="#0a0f1e">
+  <meta name="msapplication-TileColor"  content="#111111">
   <meta name="msapplication-TileImage" content="assets/images/favicons/favicon-144.png">
 
   <!-- Fonts & Icons -->
@@ -29,23 +29,23 @@
        ROOT & RESET
     ===================================================== */
     :root {
-      --c-navy:        #0a0f1e;
-      --c-navy-mid:    #0d1526;
-      --c-card:        #111827;
-      --c-card-hover:  #162032;
-      --c-teal:        #00c9b1;
-      --c-teal-dark:   #00a898;
-      --c-teal-glow:   rgba(0, 201, 177, 0.10);
-      --c-teal-border: rgba(0, 201, 177, 0.20);
+      --c-navy:        #111111;
+      --c-navy-mid:    #161616;
+      --c-card:        #1c1c1c;
+      --c-card-hover:  #242424;
+      --c-teal:        #dc2626;
+      --c-teal-dark:   #b91c1c;
+      --c-teal-glow:   rgba(220, 38, 38, 0.10);
+      --c-teal-border: rgba(220, 38, 38, 0.22);
       --c-white:       #ffffff;
-      --c-text:        #e2e8f0;
-      --c-muted:       #94a3b8;
-      --c-border:      rgba(255, 255, 255, 0.07);
+      --c-text:        #f0f0f0;
+      --c-muted:       #a3a3a3;
+      --c-border:      rgba(255, 255, 255, 0.08);
       --radius-sm:     8px;
       --radius:        16px;
       --radius-lg:     24px;
-      --shadow:        0 8px 32px rgba(0, 0, 0, 0.4);
-      --shadow-teal:   0 8px 48px rgba(0, 201, 177, 0.18);
+      --shadow:        0 8px 32px rgba(0, 0, 0, 0.5);
+      --shadow-teal:   0 8px 48px rgba(220, 38, 38, 0.22);
       --transition:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       --font-heading:  'Roboto Condensed', sans-serif;
       --font-body:     'Open Sans', sans-serif;
@@ -155,7 +155,7 @@
       border-color: var(--c-teal-dark);
       color: var(--c-navy);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0, 201, 177, 0.35);
+      box-shadow: 0 8px 32px rgba(220, 38, 38, 0.35);
     }
 
     .tt-btn-outline {
@@ -197,7 +197,7 @@
     }
 
     #tt-navbar.scrolled {
-      background: rgba(10, 15, 30, 0.96);
+      background: rgba(17, 17, 17, 0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       padding: 14px 0;
@@ -268,7 +268,7 @@
       background: var(--c-teal-dark);
       color: var(--c-navy) !important;
       transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0, 201, 177, 0.3);
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
     }
 
     /* Hamburger */
@@ -323,9 +323,9 @@
       inset: 0;
       background: linear-gradient(
         135deg,
-        rgba(10, 15, 30, 0.92) 0%,
-        rgba(10, 15, 30, 0.65) 50%,
-        rgba(5, 25, 40, 0.82) 100%
+        rgba(17, 17, 17, 0.92) 0%,
+        rgba(17, 17, 17, 0.65) 50%,
+        rgba(10, 5, 5, 0.82) 100%
       );
     }
 
@@ -333,7 +333,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 15% 60%, rgba(0, 201, 177, 0.07) 0%, transparent 55%);
+      background: radial-gradient(ellipse at 15% 60%, rgba(220, 38, 38, 0.07) 0%, transparent 55%);
     }
 
     .tt-hero-content {
@@ -349,8 +349,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(0, 201, 177, 0.08);
-      border: 1px solid rgba(0, 201, 177, 0.28);
+      background: rgba(220, 38, 38, 0.08);
+      border: 1px solid rgba(220, 38, 38, 0.35);
       color: var(--c-teal);
       font-size: 0.75rem;
       font-weight: 700;
@@ -425,8 +425,8 @@
 
     .tt-scroll-cue-arrow {
       width: 20px; height: 20px;
-      border-right: 2px solid rgba(0, 201, 177, 0.5);
-      border-bottom: 2px solid rgba(0, 201, 177, 0.5);
+      border-right: 2px solid rgba(220, 38, 38, 0.5);
+      border-bottom: 2px solid rgba(220, 38, 38, 0.5);
       transform: rotate(45deg);
     }
 
@@ -463,7 +463,7 @@
       background: var(--c-card-hover);
       transform: translateY(-6px);
       box-shadow: var(--shadow-teal);
-      border-color: rgba(0, 201, 177, 0.38);
+      border-color: rgba(220, 38, 38, 0.4);
     }
 
     .tt-prop-card:hover::before { opacity: 1; }
@@ -661,7 +661,7 @@
     .tt-process-step:hover .tt-process-num {
       background: var(--c-teal-glow);
       border-color: var(--c-teal);
-      box-shadow: 0 0 24px rgba(0, 201, 177, 0.2);
+      box-shadow: 0 0 24px rgba(220, 38, 38, 0.2);
     }
 
     .tt-process-title {
@@ -682,7 +682,7 @@
        CTA BANNER
     ===================================================== */
     .tt-cta-section {
-      background: linear-gradient(135deg, #071f1f 0%, var(--c-navy-mid) 100%);
+      background: linear-gradient(135deg, #1a0505 0%, var(--c-navy-mid) 100%);
       border-top: 1px solid var(--c-teal-border);
       border-bottom: 1px solid var(--c-teal-border);
       padding: 70px 0;
@@ -731,7 +731,7 @@
     .tt-team-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-teal);
-      border-color: rgba(0, 201, 177, 0.4);
+      border-color: rgba(220, 38, 38, 0.4);
     }
 
     .tt-team-img-wrap {
@@ -752,7 +752,7 @@
     .tt-team-hover {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(10, 15, 30, 0.95) 0%, rgba(10, 15, 30, 0.3) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.3) 60%, transparent 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -830,8 +830,8 @@
     .tt-form-input:focus,
     .tt-form-textarea:focus {
       border-color: var(--c-teal);
-      background: rgba(0, 201, 177, 0.04);
-      box-shadow: 0 0 0 3px rgba(0, 201, 177, 0.1);
+      background: rgba(220, 38, 38, 0.04);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
     }
 
     .tt-form-textarea { height: 170px; resize: vertical; }
@@ -861,7 +861,7 @@
     }
 
     .tt-info-item:hover .tt-info-icon {
-      background: rgba(0, 201, 177, 0.18);
+      background: rgba(220, 38, 38, 0.18);
       border-color: var(--c-teal);
     }
 
@@ -890,7 +890,7 @@
        FOOTER
     ===================================================== */
     .tt-footer {
-      background: #060b14;
+      background: #0a0a0a;
       border-top: 1px solid var(--c-border);
       padding: 40px 0;
     }
@@ -954,7 +954,7 @@
 
     .tt-scroll-up:hover {
       background: var(--c-teal-dark);
-      box-shadow: 0 4px 20px rgba(0, 201, 177, 0.4);
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
       color: var(--c-navy);
     }
 
@@ -992,7 +992,7 @@
         position: absolute;
         top: 100%;
         left: 0; right: 0;
-        background: rgba(8, 13, 28, 0.98);
+        background: rgba(15, 15, 15, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
