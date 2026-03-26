@@ -9,13 +9,11 @@
   <title>WrenchClick</title>
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="assets/images/favicons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="196x196" href="assets/images/favicons/favicon-192.png">
-  <link rel="icon" type="image/png" sizes="32x32"  href="assets/images/favicons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16"  href="assets/images/favicons/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180"     href="assets/images/favicons/favicon-180.png">
+  <link rel="shortcut icon" href="Assets/wrenchicon.png">
+  <link rel="icon" type="image/png" href="Assets/wrenchicon.png">
+  <link rel="apple-touch-icon" href="Assets/wrenchicon.png">
   <meta name="msapplication-TileColor"  content="#0f0f0f">
-  <meta name="msapplication-TileImage" content="assets/images/favicons/favicon-144.png">
+  <meta name="msapplication-TileImage" content="Assets/wrenchicon.png">
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -197,7 +195,6 @@
     }
 
     #tt-navbar.scrolled {
-      background: #0f0f0f;
       padding: 14px 0;
       border-bottom-color: var(--c-teal-border);
     }
@@ -979,7 +976,7 @@
     ===================================================== */
     @media (max-width: 1100px) {
       .tt-props-grid    { grid-template-columns: repeat(2, 1fr); }
-      .tt-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .tt-services-grid { grid-template-columns: repeat(2, 1fr); } /* 2x2 on tablet */
       .tt-about-content { padding: 70px 52px; }
     }
 
@@ -1021,7 +1018,7 @@
     @media (max-width: 600px) {
       .tt-section, .tt-section-alt { padding: 70px 0; }
       .tt-props-grid    { grid-template-columns: 1fr; }
-      .tt-services-grid { grid-template-columns: 1fr; }
+      .tt-services-grid { grid-template-columns: repeat(2, 1fr); } /* 2x2 on small mobile */
       .tt-hero-btns     { flex-direction: column; align-items: center; }
       .tt-about-content { padding: 48px 24px; }
       .tt-contact-grid  { gap: 36px; }
@@ -1156,39 +1153,19 @@
           <div class="tt-service-title">Custom Website Design</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.05s">
+        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.1s">
           <span class="tt-service-icon icon-gears"></span>
           <div class="tt-service-title">Local SEO &amp; Google Rankings</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.1s">
+        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.2s">
           <span class="tt-service-icon icon-puzzle"></span>
           <div class="tt-service-title">Mobile-First Development</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.15s">
-          <span class="tt-service-icon icon-calendar"></span>
-          <div class="tt-service-title">Review &amp; Trust Building</div>
-        </div>
-
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.2s">
-          <span class="tt-service-icon icon-lock"></span>
-          <div class="tt-service-title">Fast, Secure Hosting</div>
-        </div>
-
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.25s">
+        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.3s">
           <span class="tt-service-icon icon-mobile"></span>
           <div class="tt-service-title">Service Area Targeting</div>
-        </div>
-
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.3s">
-          <span class="tt-service-icon icon-presentation"></span>
-          <div class="tt-service-title">Lead Forms &amp; Click-to-Call</div>
-        </div>
-
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.35s">
-          <span class="tt-service-icon icon-documents"></span>
-          <div class="tt-service-title">Ongoing Support &amp; Updates</div>
         </div>
 
       </div>
@@ -1387,7 +1364,11 @@
       ------------------------------------------ */
       var $nav = $('#tt-navbar');
       $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 60) {
+        var scrollTop = $(this).scrollTop();
+        // Gradually darken from 0 to fully opaque over the first 200px of scroll
+        var opacity = Math.min(scrollTop / 200, 1);
+        $nav.css('background', 'rgba(15, 15, 15, ' + opacity + ')');
+        if (scrollTop > 60) {
           $nav.addClass('scrolled');
         } else {
           $nav.removeClass('scrolled');
