@@ -1148,22 +1148,22 @@
       </div>
       <div class="tt-services-grid">
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0s">
+        <div class="tt-service-item">
           <span class="tt-service-icon"><i class="fa fa-laptop"></i></span>
           <div class="tt-service-title">Custom Website Design</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.1s">
+        <div class="tt-service-item">
           <span class="tt-service-icon"><i class="fa fa-search"></i></span>
           <div class="tt-service-title">Local SEO &amp; Google Rankings</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.2s">
+        <div class="tt-service-item">
           <span class="tt-service-icon"><i class="fa fa-mobile"></i></span>
           <div class="tt-service-title">Mobile-First Development</div>
         </div>
 
-        <div class="tt-service-item wow fadeInUp" data-wow-delay="0.3s">
+        <div class="tt-service-item">
           <span class="tt-service-icon"><i class="fa fa-map-marker"></i></span>
           <div class="tt-service-title">Service Area Targeting</div>
         </div>
@@ -1342,15 +1342,24 @@
     $(document).ready(function () {
 
       /* ------------------------------------------
-         Text Rotator
+         Text Rotator — vanilla JS fallback
       ------------------------------------------ */
-      if ($.fn.textrotator) {
-        $(".rotate").textrotator({
-          animation: "fade",
-          separator: "|",
-          speed: 2400
-        });
-      }
+      (function () {
+        var el = document.querySelector('.rotate');
+        if (!el) return;
+        var items = el.textContent.split('|').map(function(s){ return s.trim(); });
+        var idx = 0;
+        el.textContent = items[0];
+        el.style.transition = 'opacity 0.5s ease';
+        setInterval(function () {
+          el.style.opacity = '0';
+          setTimeout(function () {
+            idx = (idx + 1) % items.length;
+            el.textContent = items[idx];
+            el.style.opacity = '1';
+          }, 500);
+        }, 2400);
+      })();
 
       /* ------------------------------------------
          WOW Scroll Animations
